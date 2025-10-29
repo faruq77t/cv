@@ -1,0 +1,638 @@
+/* Reset ve Genel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #121212;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px; /* Footer için boşluk */
+}
+
+/* Footer Sosyal Medya Butonları */
+.social-buttons {
+    max-width: 1200px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-12%);
+    width: 100%;
+}
+
+/* Buton stilleri yazı şeklinde güncellendi */
+.youtube-button,
+.instagram-button {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400; /* Font weight azaltıldı */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    background: transparent; /* Arka plan kaldırıldı */
+    border: none; /* Border kaldırıldı */
+    box-shadow: none; /* Gölge kaldırıldı */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    opacity: 0.8; /* Hafif saydam */
+}
+
+/* Hover efekti */
+.youtube-button:hover,
+.instagram-button:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    color: #FF6B00; /* Hover'da turuncu renk */
+    background: transparent; /* Hover'da arka plan yok */
+    border: none;
+}
+
+/* SVG ikonları */
+.youtube-button svg,
+.instagram-button svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+/* Hover'da ikon efekti */
+.youtube-button:hover svg,
+.instagram-button:hover svg {
+    opacity: 1;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .social-buttons {
+        bottom: 15px;
+    }
+    
+    .youtube-button,
+    .instagram-button {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+}
+
+/* Küçük Ekranlar İçin */
+@media (max-width: 480px) {
+    .social-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* Karanlık Mod Desteği */
+@media (prefers-color-scheme: dark) {
+    .youtube-button,
+    .instagram-button {
+        background: rgba(54, 54, 54, 0.95);
+    }
+}
+
+/* Ana container */
+.container {
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.slider {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    margin: 20px 20px 2px 20px;
+    padding: 0;
+    width: calc(100% - 40px);
+    background: linear-gradient(45deg, 
+        #ff8800 0%,      /* Saf siyah */
+        #1a1a1a 25%,
+        #000000 50%, 
+        #1a1a1a 75%,
+        #ff8800 100%     /* Açık ton siyah */
+    );
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.5;
+   
+}
+
+.slider h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.slider p {
+    color: #ffffff;
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.slider p a {
+    color: #ffffff;
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 500;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.slider p a:hover {
+    color: #ff8800;
+    transform: translateY(-2px);
+ 
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 1.5s ease-in-out;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* Slider kontrol butonları */
+.slider-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #ffffff;
+}
+
+.baslik {
+    text-align: left;
+    margin: 15px 20px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.baslik::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #ff8800;
+    margin: 5px 0;
+}
+
+.urun-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: 0 20px;
+    overflow-y: scroll;
+    height: calc(100vh - 300px);
+    min-height: 400px;
+    
+    /* Scroll tasarımı */
+    scrollbar-width: thin;
+    scrollbar-color: #ff8800 #2c2c2c;
+    
+    /* Grid düzeni için */
+    grid-auto-rows: min-content;
+    align-content: start;
+    cursor: pointer;
+}
+
+/* Webkit scroll tasarımı */
+.urun-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.urun-container::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    border-radius: 10px;
+}
+
+.urun-container::-webkit-scrollbar-thumb {
+    background: #ff8800;
+    border-radius: 10px;
+}
+
+.urun-container::-webkit-scrollbar-thumb:hover {
+    background: #cc6a00;
+}
+
+/* Kartların boyutunu sabitle */
+.urun-kart {
+    height: 240px;
+    width: 100%;
+    min-width: 250px;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: #2c2c2c;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.urun-kart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 136, 0, 0.2);
+    border-color: #ff8800;
+}
+
+.urun-kart img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.urun-kart:hover img {
+    transform: scale(1.05);
+}
+
+.urun-detay {
+    flex: 0 0 auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: #252525;
+}
+
+.fiyat {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    height: 100%;
+}
+
+.durum {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    margin: 5px;
+}
+
+.fiyat span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff8800;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.urun-id {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    border: 1px solid #333;
+}
+
+/* Responsive tasarım için medya sorguları */
+@media (max-width: 1200px) {
+    .slider {
+        margin-top: 120px;
+    }
+    .urun-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .social-buttons {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .urun-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .urun-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .urun-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .baslik {
+        font-size: 1.8rem;
+    }
+}
+
+/* Popup Stilleri */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #1e1e1e;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: popupOpen 0.3s ease-out;
+    border: 1px solid #333;
+}
+
+@keyframes popupOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Sadeleştirilmiş kapatma butonu */
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 35px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.popup-close:hover {
+    transform: scale(1.1);
+}
+
+.popup-slider {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.popup-slider-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Slider navigasyon butonları */
+.popup-slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.slider-btn {
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover efektleri */
+.slider-btn:hover {
+    transform: scale(1.1);
+}
+
+.popup-description {
+    padding: 25px;
+    height: 200px;
+    overflow-y: auto;
+    border-bottom: 1px solid #333;
+    line-height: 1.6;
+    color: #fff;
+    font-size: 15px;
+    white-space: pre-line;
+    
+    /* Scroll tasarımı */
+    scrollbar-width: thin;
+    scrollbar-color: #ff8800 #2c2c2c;
+}
+
+.popup-description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-description::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    border-radius: 10px;
+}
+
+.popup-description::-webkit-scrollbar-thumb {
+    background: #ff8800;
+    border-radius: 10px;
+}
+
+.popup-whatsapp {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: #1e1e1e;
+}
+
+.whatsapp-btn {
+    background: #ff8800;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn svg {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .popup-slider {
+        height: 350px;
+    }
+    
+    .popup-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .popup-description {
+        padding: 20px;
+        font-size: 14px;
+    }
+    
+    .whatsapp-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}
+
+.whatsapp-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.whatsapp-warning {
+    color: #ff8800;
+    font-size: 13px;
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 136, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 136, 0, 0.2);
+    max-width: 600px;
+}

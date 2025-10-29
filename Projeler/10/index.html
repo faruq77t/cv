@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../logo_1.png">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #eee;
+            box-sizing: border-box;
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+        }
+        .dis{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+        .ic{
+            background: #fff;
+            padding: 90px;
+            border-radius: 12px;
+            border: 1px solid #d1d1d1;
+            box-shadow: rgba(100, 100, 111, 0.2)0px 7px 29px 0px;
+        }
+        .vizenot{
+            margin-bottom: -1px;
+            color: #8b8b8b;
+        }
+        input{
+            width: 95%;
+            border: 1px solid #d1d1d1;
+            margin: 10px 0px;
+            padding: 8px;
+            font-size: 24px;
+            outline: none;
+            border-radius: 5px;
+        }
+        button{
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            background: #211dff;
+            color: #fff;
+        }
+        button:hover{
+            background: #4063ff;
+        }
+        .finalnot{
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-size: large;
+            color: #c20000;
+        }
+        .pler{
+            margin-top: -15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dis">
+        <div class="ic">
+            <div class="bir">
+                <p class="baslik"> vize den aldığınız nota göre finalden <br> almanız gereken notu gösteren uygulama </p>
+            </div>
+            <p class="vizenot">vize notunuzu girin.</p>
+            <input id="input" type="text"  autofocus autocomplete="off"> <br>
+            <button id="btn"> Hesapla</button>
+            <p> Finalde alınması gereken not <br> 
+
+                <p> Eğer geçme notu 55 ise: <samp class="finalnot" id="finalnot55"> </samp></p>
+                <p class="pler">Eğer geçme notu 60 sa: <samp class="finalnot" id="finalnot60"> </samp></p>
+                
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

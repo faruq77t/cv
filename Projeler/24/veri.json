@@ -1,0 +1,82 @@
+{
+    "categories": [
+      {
+        "name": "Kategori 1",
+        "cards": [
+          {
+            "title": "Kart 1",
+            "image": "faruq77t.png"
+          },
+          {
+            "title": "Kart 2",
+            "image": "faruq77t.png"
+          },
+          {
+            "title": "Kart 3",
+            "image": "faruq77t.png"
+          }       
+        ]
+      },
+      {
+        "name": "Kategori 2",
+        "cards": [
+          {
+            "title": "Kart 1",
+            "image": "face.jpg"
+          },
+          {
+            "title": "Kart 2",
+            "image": "face.jpg"
+          },
+          {
+            "title": "Kart 3",
+            "image": "face.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Kategori 3",
+        "cards": [
+          {
+            "title": "Kart 1",
+            "image": "image.png"
+          },
+          {
+            "title": "Kart 2",
+            "image": "image.png"
+          }
+        ]
+      },
+      {
+        "name": "Kategori 4",
+        "cards": [
+          {
+            "title": "Kart 1",
+            "image": "shopping.png"
+          },
+          {
+            "title": "Kart 2",
+            "image": "shopping.png"
+          },
+          {
+            "title": "Kart 3",
+            "image": "shopping.png"
+          }
+        ]
+      },
+      {
+        "name": "Kategori 5",
+        "cards": [
+          {
+            "title": "Kart 1",
+            "image": "yot.jpg"
+          },
+          {
+            "title": "Kart 2",
+            "image": "yot.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  

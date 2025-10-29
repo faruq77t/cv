@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Analog Saat</title>
+    <link rel="icon" type="image/x-icon" href="../logo_1.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        :root {
+            --primary-color: #f6f7fb;
+            --white-color: #fff;
+            --blach-color: #18191a;
+            --red-color: #e74c3c;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+        }
+
+        body.dark {
+            ---color: #242526;
+            --white-color: #18191a;
+            --blach-color: #fff;
+            --red-color: #e74c3c;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .container .clock {
+            display: flex;
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            background: var(--white-color);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .clock label {
+            position: absolute;
+            inset: 20px;
+            text-align: center;
+            transform: rotate(calc(var(--i)*(360deg / 12)));
+        }
+
+        .clock label span {
+            display: inline-block;
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--blach-color);
+            transform: rotate(calc(var(--i)*(-360deg / 12)));
+        }
+
+        .container .indicator {
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .indicator::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            z-index: 100;
+            background: var(--blach-color);
+            border: 4px solid var(--red-color);
+        }
+
+        .indicator .hand {
+            position: absolute;
+            height: 130px;
+            width: 4px;
+            bottom: 0;
+            border-radius: 25px;
+            transform-origin: bottom;
+            background: var(--red-color);
+        }
+
+        .hand.minute {
+            height: 120px;
+            width: 5px;
+            background: var(--blach-color);
+        }
+
+        .hand.hour {
+            height: 100px;
+            width: 8px;
+            background: var(--blach-color);
+        }
+
+        .mode-switch {
+            cursor: pointer;
+            margin-top: 60px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 400;
+            display: inline-block;
+            color: var(--white-color);
+            background: var(--blach-color);
+            box-shadow: 0 5px 10 rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #7777;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <label style="--i:1"><span>1</span></label>
+            <label style="--i:2"><span>2</span></label>
+            <label style="--i:3"><span>3</span></label>
+            <label style="--i:4"><span>4</span></label>
+            <label style="--i:5"><span>Q</span></label>
+            <label style="--i:6"><span>U</span></label>
+            <label style="--i:7"><span>R</span></label>
+            <label style="--i:8"><span>A</span></label>
+            <label style="--i:9"><span>F</span></label>
+            <label style="--i:10"><span>10</span></label>
+            <label style="--i:11"><span>11</span></label>
+            <label style="--i:12"><span>12</span></label>
+
+            <div class="indicator">
+                <samp class="hand hour"></samp>
+                <samp class="hand minute"></samp>
+                <samp class="hand second"></samp>
+            </div>
+        </div>
+        <div class="mode-switch">Dark Mode</div>
+        <a href="https://faruq77t.com">faruq77t</a>
+    </div>
+
+
+
+
+    <script>
+        const body = document.querySelector("body"),
+            hourHand = document.querySelector(".hour"),
+            minuteHand = document.querySelector(".minute"),
+            secondHand = document.querySelector(".second"),
+            modeSwithc = document.querySelector(".mode-switch");
+
+        modeSwithc.addEventListener("click", () => {
+            body.classList.toggle("dark");
+            const isDarkMOde = body.classList.contains("dark");
+        });
+
+        const updateTime = () => {
+            let date = new Date(),
+                secToDeg = (date.getSeconds() / 60) * 360,
+                minToDeg = (date.getMinutes() / 60) * 360,
+                hrToDeg = (date.getHours() / 12) * 360;
+
+            secondHand.style.transform = `rotate(${secToDeg}deg`;
+            minuteHand.style.transform = `rotate(${minToDeg}deg`;
+            hourHand.style.transform = `rotate(${hrToDeg}deg`;
+        };
+
+        setInterval(updateTime, 1000);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    height: 100vh;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(26, 26, 26, 0.8); /* Yarı saydam panel */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid rgba(42, 42, 42, 0.5);
+    backdrop-filter: blur(10px); /* Bulanık cam efekti */
+}
+
+h2 {
+    padding: 20px;
+    text-align: center;
+    background: #1f1f1f;
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #2a2a2a;
+}
+
+.panel-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.file-upload-area {
+    padding: 10px;
+    position: relative;
+    text-align: center;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 20px;
+    border: 2px dashed #2a2a2a;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    position: relative;
+    height: 60px;
+}
+
+input[type="file"]::before {
+    content: '📁 CSV Dosyası Seçin';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none;
+    background: transparent;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type="file"]:hover {
+    border-color: #353535;
+    background: #1a1a1a;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Dosya seçildiğinde gösterilecek stil */
+input[type="file"]:not([value=""]) {
+    border-color: #353535;
+    background: #1d1d1d;
+}
+
+.list-area {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 10px;
+    background: #151515;
+}
+
+.participant-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    background: #1d1d1d;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: #ff0000;
+    transform: scale(1.05);
+}
+
+#participantsList div:hover {
+    transform: translateX(5px);
+    background: #252525;
+}
+
+#animation-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #2a2a2a;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #151515;
+}
+
+#current-participant {
+    padding: 20px;
+    background: #1f1f1f;
+    color: white;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    padding: 15px;
+    background: linear-gradient(45deg, #FF69B4, #FF0000, #FFD700);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: gradientAnimation 3s ease infinite;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+    background: #151515;
+    cursor: not-allowed;
+    animation: none;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.winner-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(37, 37, 37, 0.9) 100%);
+    padding: 20px;
+    padding-top: 45px;
+    margin: 8px 8px;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(42, 42, 42, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.winner-card::before {
+    content: '👑';
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%) rotate(0deg);
+    font-size: 40px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.winner-name {
+    font-size: 48px;
+    margin-top: 8px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.winner-number {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #151515;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #353535;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#winnersList {
+    padding: 5px;
+    overflow-y: auto;
+}
+
+.website-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #2a2a2a;
+    color: #808080;  /* Gri metin rengi */
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.website-button:hover {
+    transform: translateY(-2px);
+    background: #333333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.info-box {
+    margin-top: 20px;
+    padding: 5px 25px;
+    background: rgba(42, 42, 42, 0.3);
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.info-box p {
+    color: #a0a0a0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-line;
+}
+
+.info-box a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #2a2a2a;
+    color: #808080;  /* Gri metin rengi */
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    text-align: center;
+}
+
+.info-box a:hover {
+    transform: translateY(-2px);
+    background: #333333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar stilleri */
+.info-box::-webkit-scrollbar {
+    width: 5px;
+}
+
+.info-box::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.info-box::-webkit-scrollbar-thumb {
+    background: #3d3d3d;
+    border-radius: 4px;
+}
+
+.info-box::-webkit-scrollbar-thumb:hover {
+    background: #4d4d4d;
+}
+
+/* Tablet için (768px'e kadar) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .panel {
+        width: 100%;
+        margin: 10px 0;
+        min-height: 400px;
+    }
+
+    .panel-content {
+        padding: 15px;
+        min-height: 350px;
+    }
+
+    .info-box {
+        max-height: 200px;
+    }
+
+    .info-box p {
+        font-size: 13px;
+    }
+
+    #animation-area {
+        min-height: 150px;
+        padding: 15px;
+    }
+
+    .winner-card {
+        padding: 10px;
+    }
+
+    .list-area {
+        min-height: 200px;
+    }
+}
+
+/* Mobil için (480px'e kadar) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    .panel {
+        margin: 5px 0;
+        min-height: 350px;
+    }
+
+    .panel-content {
+        padding: 10px;
+        min-height: 300px;
+    }
+
+    .info-box {
+        max-height: 150px;
+    }
+
+    .info-box p {
+        font-size: 12px;
+    }
+
+    #animation-area {
+        min-height: 120px;
+        padding: 10px;
+    }
+
+    .list-area {
+        min-height: 150px;
+    }
+
+    button, .website-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+.manual-entry {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.manual-entry input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    background: #151515;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.manual-entry input:focus {
+    outline: none;
+    border-color: #353535;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.manual-entry button {
+    padding: 10px 40px;
+    min-width: 80px;
+}

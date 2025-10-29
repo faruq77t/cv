@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: #212429;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+}
+.container .info h1{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+p{
+    font-size: 12px;
+}
+
+.container form{
+    margin: 15px 0 25px;
+}
+
+.container form :where(input , button){
+    outline: 0;
+    border: 0;
+    width: 100%;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 15px;
+    font-size: 20px;   
+}
+
+.container form input{
+    border: 1px solid #999;
+}
+.container form button{
+    background: #212429;
+    color: #fff;
+    cursor: pointer;
+
+}
+.container .qr-code{
+    border: 1px solid #999;
+    border-radius: 5px;
+    text-align: center;
+    padding:  60px ;
+}
+
+.hidden{
+ display: none;
+}

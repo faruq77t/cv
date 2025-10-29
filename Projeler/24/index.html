@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açılır Kategoriler</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="logo_1.png" type="image/x-icon">
+</head>
+<body>
+    <div class="category-selector">
+        <select id="categoryDropdown" onchange="loadSelectedCategory()">
+            <option value="">Kategori Seçin</option>
+            <!-- Dinamik olarak kategoriler burada yüklenecek -->
+        </select>
+        <p class="bilgi"> kartlar JSON dan çekilmektedir</p>
+    </div>
+    <div id="cardsContainer" class="cards-container">
+        <!-- Seçilen kategoriye ait kartlar burada yüklenecek -->
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icom" href="../logo_1.png">
+    <title>👣Yaş Hesaplayıcı</title>
+    <style>
+        
+        body {
+            display: flex;
+            height:80vh;
+            background-color: #383838;
+            background-image: url("Rect\ Light\ \(1\).svg");
+            align-items: center;
+            justify-content: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+
+        #container {
+            width: 900px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 20px;
+           
+      
+
+        }
+        h2{
+            font-size: 40px;
+            margin-bottom: -1px;
+            margin-top: 70px;
+          }
+        .tex{
+            margin-bottom: 20px;
+            font-size: 25px;
+            margin-top:8px;
+        }
+        input[type="date"] {
+            padding: 10px;
+            width: 40%;
+            margin-bottom: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 1px solid #c7c7c7;
+        }
+
+        button {
+            padding: 12px 40px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        #result{
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>👣Yaş Hesaplayıcı</h2>
+        <label class="tex">Doğum tarihinizi girin :</label>
+        <input type="date" id="birthdate">
+        <button onclick="calculateAge()">Yaşı Hesapla</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateAge() {
+            var birthdateInput = document.getElementById('birthdate').value;
+            if (!birthdateInput) {
+                alert("Lütfen doğum tarihinizi girin.");
+                return;
+            }
+
+            var birthdate = new Date(birthdateInput);
+            var today = new Date();
+            var age = today.getFullYear() - birthdate.getFullYear();
+            var months = today.getMonth() - birthdate.getMonth();
+            var days = today.getDate() - birthdate.getDate();
+
+            if (months < 0 || (months === 0 && today.getDate() < birthdate.getDate())) {
+                age--;
+                months += 12;
+            }
+
+            if (days < 0) {
+                var lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 0);
+                days += lastMonth.getDate();
+                months--;
+            }
+
+            var result = document.getElementById('result');
+            result.innerHTML = + age + " yıl , " + months + " ay ve " + days + " gündür 🌍Dünyadasın !!! ";
+        }
+    </script>
+
+</body>
+</html>

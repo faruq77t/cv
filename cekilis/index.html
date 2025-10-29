@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çekiliş Uygulaması - Online Ücretsiz Çekiliş Yapma Aracı</title>
+    
+    <!-- SEO Meta Etiketleri -->
+    <meta name="description" content="Ücretsiz online çekiliş uygulaması ile hızlı ve adil çekilişler yapın. CSV dosyası ile toplu katılımcı yükleme, anlık sonuç ve kazanan listesi özellikleri.">
+    <meta name="keywords" content="çekiliş uygulaması, online çekiliş, ücretsiz çekiliş, random çekiliş, kura çekimi, hediye çekilişi, csv çekiliş">
+    <meta name="author" content="faruq77t.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cekilis.faruq77t.com">
+    <meta property="og:title" content="Çekiliş Uygulaması - Online Ücretsiz Çekiliş Yapma Aracı">
+    <meta property="og:description" content="Ücretsiz online çekiliş uygulaması ile hızlı ve adil çekilişler yapın. CSV dosyası ile toplu katılımcı yükleme özelliği.">
+    <meta property="og:image" content="https://cekilis.faruq77t.com/preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cekilis.faruq77t.com">
+    <meta property="twitter:title" content="Çekiliş Uygulaması - Online Ücretsiz Çekiliş Yapma Aracı">
+    <meta property="twitter:description" content="Ücretsiz online çekiliş uygulaması ile hızlı ve adil çekilişler yapın. CSV dosyası ile toplu katılımcı yükleme özelliği.">
+    <meta property="twitter:image" content="https://cekilis.faruq77t.com/preview.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cekilis.faruq77t.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo_1.png">
+    
+    <!-- Diğer head içeriği -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <audio id="applauseSound" preload="auto">
+        <source src="https://www.soundjay.com/human/applause-01.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cheerSound" preload="auto">
+        <source src="https://www.soundjay.com/crowd/crowd-excited-1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="crowdSound" preload="auto">
+        <source src="https://www.soundjay.com/crowd/crowd-screaming-1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="stadiumSound" preload="auto">
+        <source src="https://www.soundjay.com/crowd/soccer-crowd-1.mp3" type="audio/mpeg">
+    </audio>
+</head>
+<body>
+    <div class="container">
+        <div class="panel left-panel">
+            <h2>Katılımcılar</h2>
+            <div class="panel-content">
+                <div class="file-upload-area">
+                    <input type="file" id="csvFile" accept=".csv">
+                    <div class="manual-entry">
+                        <input type="text" id="manualParticipant" placeholder="Katılımcı adı girin">
+                        <button id="addParticipant">Ekle</button>
+                    </div>
+                </div>
+                <div id="participantsList" class="list-area"></div>
+            </div>
+        </div>
+        
+        <div class="panel middle-panel">
+            <h2>Çekiliş</h2>
+            <div class="panel-content">
+                <div id="animation-area">
+                    <span id="current-participant">Çekiliş Başlatın</span>
+                </div>
+                <button id="startDraw">Çekiliş Başlat</button>
+                <div class="info-box">
+                    <p>
+                        <strong>Açıklama !</strong>
+                        Bu  <strong>çekiliş uygulaması,</strong> 
+                        toplu etkinlikler ve organizasyonlar için tasarlanmış profesyonel bir araçtır. 
+
+                        Kullanımı oldukça basittir:
+                        
+                        1. Sol panelde bulunan dosya yükleme alanından katılımcı listesini içeren CSV dosyasını yükleyin.
+                        2. Yüklenen katılımcılar otomatik olarak sol panelde listelenecektir.
+                        3. "Çekiliş Başlat" butonuna tıklayarak çekilişi başlatın.
+                        4. Çekiliş animasyonu başlayacak ve rastgele bir kazanan seçilecektir.
+                        5. Kazanan kişi sağ panelde listelenecek ve confetti efekti ile kutlama yapılacaktır.
+                        
+                        Özellikler:
+                        - Sınırsız katılımcı desteği
+                        - Otomatik kazanan seçimi
+                        - Görsel ve sesli efektler
+                        - Kazananlar listesi
+                        - Adil ve şeffaf çekiliş sistemi
+                        
+                        Not: CSV dosyası her satırda bir katılımcı ismi olacak şekilde hazırlanmalıdır.
+                        <a href="https://tr.faruq77t.com" target="_blank">faruq77t Tarafından geliştirildi</a>
+                    </p>
+                </div>
+                <a href="https://tr.faruq77t.com" target="_blank">
+                    <button type="button" class="website-button">faruq77t.com</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel right-panel">
+            <h2>Kazananlar</h2>
+            <div class="panel-content">
+                <div id="winnersList" class="list-area"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

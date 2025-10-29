@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../logo_1.png">
+    <title>13</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #eee;
+        }
+        .dis{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .ic{
+            background: #fff;
+            padding: 90px ;
+            padding-left: 65px;
+            border-radius: 12px;
+        }
+        input{
+            outline: none;
+            padding: 10px ;
+            border: none;
+            background: #dddddd;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 25px;
+        }
+        i{
+            position: absolute;
+            margin-top: -33px;
+            margin-left: 320px;
+            color: rgb(122, 122, 122);
+            cursor: pointer;
+        }
+        h2{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sifre{
+            margin-left: 3px;
+            margin-bottom: 3px;
+        }
+        .sartlar{
+            margin-left: 6px;
+            margin-bottom: -10px;
+        }
+        .fa-eye{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="dis">
+        <div class="ic">
+           <h2> Şifre şartları</h2>
+           <P class="sifre">Şifrenizi girin...</P>
+            <div class="ust">
+                <input type="password" id="input" autofocus autocomplete="off">
+                <i class="fa-regular fa-eye-slash"></i>
+                <i class="fa-regular fa-eye"></i>
+            </div>
+            <div class="sart">
+                <p class="sartlar" id="sartKucuk">En az bir Küçük harf</p>
+                <p class="sartlar" id="sartBuyuk">En az bir Büyük harf</p>
+                <p class="sartlar" id="sartRakam">En az bir Rakam</p>
+                <p class="sartlar" id="sartÖzelKarakter">En az bir Özel karakter</p>
+                <p class="sartlar" id="sart8karakter">En az 8 karakter uzunluğunda</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

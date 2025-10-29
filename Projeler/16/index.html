@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button ile Sayfa URL'sini Kopyalama</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+
+#copyButton {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #FC5B5B;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+
+#copyButton:hover {
+  background-color: #9f9f9f; 
+}
+
+
+.share-icon {
+  margin-left: 5px; 
+}
+
+
+.message-box {
+  position: fixed;
+  top: 40px;
+  right: 0px;
+  padding: 15px 55px 15px 20px;
+  background-color: #FC5B5B; 
+  color: #fff;
+  border-radius: 5px 0px 0px 5px;
+  display: none; 
+  animation: slideInRight 0.5s ease forwards, fadeOut 0.5s ease 1.5s forwards;
+}
+
+
+.share-icon {
+  margin-left: 5px;
+}
+
+#copyButton:hover .share-icon {
+  opacity: 1;
+}
+
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<button id="copyButton"> Paylaş <i class="fas fa-share share-icon"></i></button>
+
+
+<div id="messageBox" class="message-box"></div>
+
+<script>
+document.getElementById("copyButton").addEventListener("click", function() {
+
+    var pageURL = window.location.href;
+
+
+    var tempInput = document.createElement("input");
+
+
+    tempInput.value = pageURL;
+
+
+    tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+    document.body.appendChild(tempInput);
+
+
+    tempInput.select();
+    document.execCommand("copy");
+
+
+    document.body.removeChild(tempInput);
+
+    
+    var alertMessage = '<i class="fas fa-check-circle"></i> Sayfa URL\'si kopyalandı';
+    var messageBox = document.getElementById("messageBox");
+    messageBox.innerHTML = alertMessage;
+    messageBox.style.display = "block"; 
+    setTimeout(function(){
+        
+        messageBox.style.display = "none";
+    }, 2000); 
+});
+</script>
+
+</body>
+</html>

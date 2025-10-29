@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>03</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 70vh;
+            box-sizing: border-box;
+            background: #eee;
+        }
+        .dis{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+
+        }
+        .ic{
+            background: #fff;
+            padding: 40px;
+            display: flex;
+            border-radius: 25px;
+            border: 1px solid #cccccc;
+            justify-content: center;
+            align-items: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .fotodis{
+            padding: 18px;
+        }
+        img{
+            width: 250px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+        .bilgi{
+            padding: 20px;
+        }
+        h3{
+            font-size: 25px;
+            margin-right: 30px;
+            padding-left: 20px;
+        }
+        samp{
+            padding-left: 20px;
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(0, 124, 133);
+        }
+    </style>
+</head>
+<body>
+    <div class="dis">
+        <div class="ic">
+            <div class="fotodis">
+                <img src="foto1.jpg"  alt="foto">
+             </div>
+            <div class="bilgi">
+                <h3>isim <samp id="isimi"></samp></h3> 
+                <h3>soyisim <samp id="soyisim"></samp></h3>
+                <h3>yas <samp id="yas"></samp></h3>
+                <h3>meslek <samp id="meslek"></samp></h3>
+                <h3>telefon <samp id="telefon"></samp></h3>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Etiketleri -->
+    <title>CSV to JSON Dönüştürücü | Ücretsiz Online CSV JSON Converter</title>
+    <meta name="description" content="CSV dosyalarınızı JSON formatına hızlıca dönüştürün. Ücretsiz, kolay kullanımlı online CSV to JSON dönüştürücü. Sürükle bırak desteği ile hemen dönüştürmeye başlayın.">
+    <meta name="keywords" content="csv to json, csv json dönüştürücü, csv converter, json converter, online csv converter, csv to json online, ücretsiz csv dönüştürücü">
+    
+    <!-- Open Graph Meta Etiketleri -->
+    <meta property="og:title" content="CSV to JSON Dönüştürücü | Ücretsiz Online CSV JSON Converter">
+    <meta property="og:description" content="CSV dosyalarınızı JSON formatına hızlıca dönüştürün. Ücretsiz, kolay kullanımlı online CSV to JSON dönüştürücü.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csvtojson.faruq77t.com">
+    <meta property="og:image" content="https://csvtojson.faruq77t.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSV to JSON Dönüştürücü">
+    <meta name="twitter:description" content="Ücretsiz CSV to JSON dönüştürücü. CSV dosyalarınızı hızlıca JSON formatına çevirin.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://csvtojson.faruq77t.com">
+    
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" href="logo_1.png">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="theme-toggle">🌙</button>
+    
+    <div class="container">
+        <div class="card">
+            <h1>CSV → JSON</h1>
+            
+            <div class="upload-zone" id="dropZone">
+                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <p>CSV Dosyanı Buraya Sürükle</p>
+                <input type="file" id="fileInput" accept=".csv" hidden/>
+                <span>veya</span>
+                <button class="upload-btn">Dosya Seç</button>
+            </div>
+
+            <a href="https://faruq77t.com" class="creator-link" target="_blank" rel="noopener">faruq77t.com</a>
+
+
+            <div class="result-zone" style="display: none;">
+                <div class="toolbar">
+                    <h3>JSON Çıktısı</h3>
+                    <div>
+                        <button id="copyBtn">Kopyala</button>
+                        <button id="downloadBtn">İndir</button>
+                    </div>
+                </div>
+                <pre id="jsonResult"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

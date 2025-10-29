@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 Şifre Üretime</title>
+    <link rel="icon" type="" href="../logo_1.png">
+    
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-image: url("Moon.svg");
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #container {
+            width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding:70px;
+            border-radius: 12px;
+            font-size: 30px;
+            margin-top: 200px;
+        }
+
+        .buton{
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        
+        .bup{
+            border: 1px solid #007bff;
+            padding: 10px;
+            border-radius: 9px;
+            font-weight: bold;
+            font-size: 24px;
+            margin: 30px 100px;
+        }
+        #password{
+            font-size: 24px;
+            font-weight: 400;
+            color: #007bff;
+            padding: 5px 10px ;
+            cursor: url("opl.svg"), pointer;
+            text-decoration: none;
+            border-radius: 8px;
+            
+        }
+        #password:hover{
+            color: #ffffff;
+            background-color: #007bff;
+        }
+        #alertBox {
+            position: fixed;
+            top: 210px;
+            right: 550px;
+            background-color: #f12525;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 9px;
+            display: none;
+            text-align: none;
+        }
+        h2{
+            margin-top: -10px;
+        }
+        H6{
+            margin-top: -15PX;
+            margin-bottom: -10PX;
+            font-size: 14px;
+            color: #777777;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>🔐 Şifre Üretime</h2>
+        <h6>%100 güvenilir şifre üretme uygulaması</h6>
+        <div id="packageContents" >
+            <p class="bup">Şifre:   <span id="password">*******</span></p>
+        </div>
+        <button class="buton" onclick="openPackage()">Yeni şifre oluştur</button>
+         
+    <div id="alertBox"></div>
+
+    <script>
+        function generatePassword(length) {
+            var charset = "abcdefghijklmnopqrstuvwxyz@#+%$~,;:.{}<>[]()/`ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#+%$~,;:.{}<>[]()/`";
+            var password = "";
+            for (var i = 0; i < length; i++) {
+                var randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            return password;
+        }
+
+        function openPackage() {
+            var passwordLength = 16;
+            var password = generatePassword(passwordLength);
+            document.getElementById('password').textContent = password;
+            document.getElementById('packageContents').style.display = 'block';
+            //showNotification("Şifre kopyalandı: " + password, 3000);
+        }
+
+        document.getElementById("password").addEventListener("click", function() {
+            var password = document.getElementById('password').textContent;
+            var tempInput = document.createElement("input");
+            tempInput.setAttribute("value", password);
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            showNotification("Şifre kopyalandı: " + password, 3000);
+        });
+
+        function showNotification(message, duration) {
+            var alertBox = document.getElementById("alertBox");
+            alertBox.innerHTML = message;
+            alertBox.style.display = "block";
+            setTimeout(function(){
+                alertBox.style.display = "none";
+            }, duration);
+        }
+        
+    </script>
+</body>
+</html>

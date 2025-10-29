@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            background: #eee;
+            box-sizing: border-box;
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            }
+        .dis{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ic{
+            display: block;
+            justify-content: center;
+            align-items: c;
+            background: #fff;
+            margin: 150px 20px;
+            padding: 90px;
+            border-radius: 15px;
+            border: 1px solid #d8d8d8;
+            box-shadow: rgba(100, 100, 111, 0.2)0px 7px 29px 0px;
+            
+        }
+        input{
+            outline: none;
+            border: 1px solid #d8d8d8;
+            background: #eee;
+            padding: 8px;
+            margin-top: 5px;
+            font-size: large;
+            border-radius: 4px;
+            width: 100%;
+        }
+        button{
+            margin-top: 12px;
+            width: 108%;
+            padding: 10px ;
+            border: none;
+            background: #000;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover{
+            background: #292929;
+        }
+        .toplam{
+            margin-top: -50px;
+            text-align: center;
+            font-size: 80px;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="dis">
+        <div class="ic">
+            <p class="toplam" id="topla">0,0</p>
+            <p id="mesaj">2 sayıyı Toplama</p>
+            <input id="input1" type="text" placeholder="1.Sayıy girin."autofocus autocomplete="off" > <br>
+            <input id="input2" type="text" placeholder="2.Sayıy girin."> <br>
+            <button id="btn">Hesapla</button>
+        </div>
+        <div class="ic">
+            <p class="toplam" id="topla1">0,0</p>
+            <p id="mesaj1">2 sayıyı Çarpma</p>
+            <input id="input11" type="text" placeholder="1.Sayıy girin."autofocus autocomplete="off" > <br>
+            <input id="input21" type="text" placeholder="2.Sayıy girin."> <br>
+            <button id="btn1">Hesapla</button>
+        </div>
+        <div class="ic">
+            <p class="toplam" id="topla2">0,0</p>
+            <p id="mesaj2">2 sayıyı Bölme</p>
+            <input id="input12" type="text" placeholder="1.Sayıy girin."autofocus autocomplete="off" > <br>
+            <input id="input22" type="text" placeholder="2.Sayıy girin."> <br>
+            <button id="btn2">Hesapla</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+

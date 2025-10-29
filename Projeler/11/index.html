@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../logo_1.png">
+    <title>11</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            background: #eee;
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-size: large;
+            box-sizing: border-box;
+        }
+        .dis{
+            display: flex;
+            justify-content: center;
+            align-items: center;   
+            height: 70vh;      
+        }
+        .ic{
+            background: #fff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+        }
+        .ic1{
+            display: flex;
+            justify-content: end;
+            margin: 15px;
+            margin-top: -60px;
+        }
+        .sag {
+            background: #ffffffe5 ;
+            padding: 6px 12px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .sol{
+            background: #ffffffe5 ;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+        .mySlides {
+        display: flex;
+        transition: left 1s ease; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dis">
+     <div class="ic">
+        <h3>Slayt şov.</h3>
+        <img class="mySlides" src="../11/img/1.jpg">
+        <img class="mySlides" src="../11/img/2.jpg">
+        <img class="mySlides" src="../11/img/3.jpg">
+        <img class="mySlides" src="../11/img/4.jpg">
+        <img class="mySlides" src="../11/img/5.jpg">
+        <img class="mySlides" src="../11/img/6.jpg">
+
+        <div class="ic1" >
+          <div class="sag" onclick="plusDivs(-1)">&#10094;</div>
+          <div class="sol" onclick="plusDivs(1)">&#10095;</div>
+        </div>
+     </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
